@@ -4,6 +4,7 @@ An intelligent code generation studio that transforms your ideas into complete, 
 
 ## Features
 
+### Core Features
 - **Multi-Language Support**: Generate projects in Python, JavaScript, TypeScript, Java, C++, Rust, Go, and more
 - **Project Templates**: Pre-built templates for games, web apps, APIs, CLI tools, and AI applications
 - **Iterative Refinement**: Continuously improves code until it works perfectly
@@ -12,6 +13,19 @@ An intelligent code generation studio that transforms your ideas into complete, 
 - **Smart Dependencies**: Automatic dependency detection and management
 - **Progress Tracking**: Visual feedback on generation progress
 - **Export Projects**: Download complete, ready-to-run projects
+
+### 🆕 Advanced Features
+
+- **Context Persistence**: Save and resume project sessions anytime - never lose your work!
+- **Multi-Model Support**: Switch between Claude, GPT-4, Gemini, or local Ollama models
+- **Cost Tracking**: Monitor API usage and costs across all AI providers
+- **Git Integration**: Auto-initialize repos, commit iterations, rollback to any version
+- **Smart Venv Management**: Automatic virtual environment creation and dependency installation
+- **Template Library**: Battle-tested templates, custom templates, import/export capability
+- **Version Conflict Resolution**: Automatic detection and resolution of dependency conflicts
+- **Session Management**: Load previous projects, view history, track all iterations
+
+📖 See [FEATURES.md](FEATURES.md) for detailed documentation on all advanced features.
 
 ## Quick Start
 
@@ -59,26 +73,70 @@ python app.py
 
 ```
 CodeForge AI
-├── app.py                  # Main Flask application
+├── app.py                      # Main Flask application
 ├── core/
-│   ├── ai_engine.py       # AI integration and orchestration
-│   ├── project_generator.py # Project generation logic
-│   ├── code_executor.py   # Safe code execution sandbox
-│   └── templates/         # Project templates
-├── static/                # Frontend assets
-├── templates/             # HTML templates
-└── generated_projects/    # Output directory
+│   ├── ai_engine.py           # AI integration and orchestration
+│   ├── multi_model_engine.py  # Multi-model support (Claude/GPT/Gemini/Ollama)
+│   ├── project_generator.py   # Project generation logic
+│   ├── code_executor.py       # Safe code execution sandbox
+│   ├── session_manager.py     # Session persistence (SQLite)
+│   ├── git_manager.py         # Git version control integration
+│   ├── venv_manager.py        # Virtual environment management
+│   ├── template_library.py    # Template repository system
+│   └── templates/             # Project templates
+├── static/                    # Frontend assets
+├── templates/                 # HTML templates
+├── templates_library/         # Template library storage
+│   ├── builtin/              # Built-in templates
+│   ├── custom/               # User custom templates
+│   └── community/            # Community templates
+├── generated_projects/        # Output directory
+└── sessions.db               # Session database
 ```
 
 ## Configuration
 
 Edit `.env` file:
 
-```
-ANTHROPIC_API_KEY=your_api_key_here
+```bash
+# AI Provider API Keys (add the ones you want to use)
+ANTHROPIC_API_KEY=your_anthropic_key_here
+OPENAI_API_KEY=your_openai_key_here
+GOOGLE_API_KEY=your_google_key_here
+
+# AI Model Selection
+CLAUDE_MODEL=claude-sonnet-4-5-20250929
+OPENAI_MODEL=gpt-4
+GEMINI_MODEL=gemini-pro
+
+# Local Models (Ollama)
+ENABLE_OLLAMA=false
+OLLAMA_MODEL=codellama
+OLLAMA_HOST=http://localhost:11434
+
+# Application Settings
 MAX_ITERATIONS=10
 CODE_TIMEOUT=30
 SUPPORTED_LANGUAGES=python,javascript,typescript,java,cpp,rust,go
+```
+
+### Using Different AI Models
+
+CodeForge AI supports multiple AI providers:
+
+1. **Claude** (Anthropic) - Default, excellent for code generation
+2. **OpenAI GPT** - Alternative premium option
+3. **Google Gemini** - Cost-effective option
+4. **Ollama** - Free local models (no API costs!)
+
+To use Ollama locally:
+```bash
+# Install Ollama from https://ollama.ai
+ollama pull codellama
+ollama serve
+
+# In .env, set:
+ENABLE_OLLAMA=true
 ```
 
 ## Safety
