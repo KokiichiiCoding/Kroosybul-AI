@@ -24,6 +24,9 @@ class AIEngine:
         self.temperature = float(os.getenv('AI_TEMPERATURE', '0.7'))
         self.max_tokens = int(os.getenv('MAX_TOKENS', '8000'))
 
+        # Initialize enhanced features (will be done lazily to avoid circular import)
+        self.enhanced_features = None
+
     def analyze_project_request(self, user_message: str, conversation_history: List[Dict]) -> Dict[str, Any]:
         """
         Analyze the user's project request and create a detailed project plan
@@ -275,3 +278,30 @@ Keep it concise (3-5 sentences) and practical."""
         except Exception as e:
             logger.error(f"Error enhancing project idea: {e}")
             return basic_idea
+
+    def get_enhanced_features(self):
+        """Lazy initialization of enhanced features"""
+        if self.enhanced_features is None:
+            from .enhanced_features import EnhancedAIFeatures
+            self.enhanced_features = EnhancedAIFeatures(self)
+        return self.enhanced_features
+
+    def generate_architecture_diagram(self, project_plan: Dict[str, Any]) -> str:
+        """Generate Mermaid.js architecture diagram"""
+        return self.get_enhanced_features().generate_architecture_diagram(project_plan)
+
+    def explain_error_naturally(self, error: str, project_context: Dict) -> str:
+        """Provide natural-language error explanation"""
+        return self.get_enhanced_features().explain_error_naturally(error, project_context)
+
+    def generate_test_summary(self, test_results: Dict[str, Any]) -> str:
+        """Generate AI-powered test summary"""
+        return self.get_enhanced_features().generate_test_summary(test_results)
+
+    def generate_documentation(self, code: str, language: str) -> str:
+        """Generate documentation for code"""
+        return self.get_enhanced_features().generate_documentation(code, language)
+
+    def estimate_complexity(self, code: str, language: str) -> Dict[str, Any]:
+        """Estimate algorithmic complexity"""
+        return self.get_enhanced_features().estimate_complexity(code, language)

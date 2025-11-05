@@ -15,6 +15,7 @@ from datetime import datetime
 from core.ai_engine import AIEngine
 from core.project_generator import ProjectGenerator
 from core.code_executor import CodeExecutor
+from core.enhanced_features import MultiModelSupport, ReusableComponentLibrary
 
 # Load environment variables
 load_dotenv()
@@ -36,6 +37,8 @@ logger = logging.getLogger(__name__)
 ai_engine = AIEngine()
 project_generator = ProjectGenerator()
 code_executor = CodeExecutor()
+multi_model_support = MultiModelSupport()
+component_library = ReusableComponentLibrary()
 
 # Store active sessions
 active_sessions = {}
@@ -121,6 +124,14 @@ def handle_message(data):
         emit('status', {'message': 'Creating project structure...', 'stage': 'planning'})
         emit('ai_response', {'message': project_plan['description'], 'type': 'plan'})
 
+        # Generate architecture diagram
+        emit('status', {'message': 'Generating architecture diagram...', 'stage': 'planning'})
+        try:
+            architecture_diagram = ai_engine.generate_architecture_diagram(project_plan)
+            emit('architecture_diagram', {'diagram': architecture_diagram, 'format': 'mermaid'})
+        except Exception as e:
+            logger.warning(f"Failed to generate architecture diagram: {e}")
+
         # Generate the project
         emit('status', {'message': 'Generating code...', 'stage': 'generation'})
 
@@ -137,6 +148,13 @@ def handle_message(data):
 
         test_results = code_executor.test_project(project_result['path'])
 
+        # Generate AI-powered test summary
+        try:
+            test_summary = ai_engine.generate_test_summary(test_results)
+            emit('test_summary', {'summary': test_summary})
+        except Exception as e:
+            logger.warning(f"Failed to generate test summary: {e}")
+
         # Iterative refinement if needed
         iteration = 0
         max_iterations = int(os.getenv('MAX_ITERATIONS', 10))
@@ -148,6 +166,18 @@ def handle_message(data):
                 'stage': 'refinement',
                 'iteration': iteration
             })
+
+            # Provide natural language explanations for errors
+            if test_results.get('errors'):
+                try:
+                    for error in test_results['errors'][:3]:  # Explain top 3 errors
+                        explanation = ai_engine.explain_error_naturally(
+                            error,
+                            {'language': project_result['language'], 'project_type': project_plan['project_type']}
+                        )
+                        emit('error_explanation', {'error': error, 'explanation': explanation})
+                except Exception as e:
+                    logger.warning(f"Failed to generate error explanations: {e}")
 
             # Ask AI to fix the issues
             fixes = ai_engine.fix_code_issues(
@@ -257,6 +287,107 @@ def get_templates():
     """Get available project templates"""
     templates = project_generator.get_available_templates()
     return jsonify({'templates': templates})
+
+
+@app.route('/api/templates/category/<category>', methods=['GET'])
+def get_templates_by_category(category):
+    """Get templates filtered by category"""
+    templates = project_generator.get_templates_by_category(category)
+    return jsonify({'templates': templates, 'category': category})
+
+
+@app.route('/api/models', methods=['GET'])
+def get_available_models():
+    """Get list of available AI models"""
+    models = multi_model_support.get_available_models()
+    return jsonify({'models': models})
+
+
+@app.route('/api/components/search', methods=['POST'])
+def search_components():
+    """Search for reusable components"""
+    data = request.get_json()
+    query = data.get('query')
+    language = data.get('language')
+    tags = data.get('tags')
+
+    results = component_library.search_components(query, language, tags)
+    return jsonify({'components': results})
+
+
+@app.route('/api/components/save', methods=['POST'])
+def save_component():
+    """Save a reusable component"""
+    data = request.get_json()
+
+    try:
+        component_library.save_component(
+            name=data['name'],
+            code=data['code'],
+            language=data['language'],
+            description=data['description'],
+            tags=data.get('tags', [])
+        )
+        return jsonify({'success': True, 'message': 'Component saved successfully'})
+    except Exception as e:
+        logger.error(f"Error saving component: {e}")
+        return jsonify({'success': False, 'error': str(e)}), 400
+
+
+@app.route('/api/analyze/complexity', methods=['POST'])
+def analyze_complexity():
+    """Analyze code complexity"""
+    data = request.get_json()
+    code = data.get('code', '')
+    language = data.get('language', 'python')
+
+    try:
+        complexity = ai_engine.estimate_complexity(code, language)
+        return jsonify({'success': True, 'complexity': complexity})
+    except Exception as e:
+        logger.error(f"Error analyzing complexity: {e}")
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+
+@app.route('/api/document/generate', methods=['POST'])
+def generate_documentation():
+    """Generate documentation for code"""
+    data = request.get_json()
+    code = data.get('code', '')
+    language = data.get('language', 'python')
+
+    try:
+        documented_code = ai_engine.generate_documentation(code, language)
+        return jsonify({'success': True, 'documented_code': documented_code})
+    except Exception as e:
+        logger.error(f"Error generating documentation: {e}")
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+
+@socketio.on('upload_file')
+def handle_file_upload(data):
+    """Handle file upload for context-based generation"""
+    session_id = request.sid
+    filename = data.get('filename', 'unknown')
+    content = data.get('content', '')
+
+    logger.info(f"File uploaded: {filename} from {session_id}")
+
+    # Store uploaded file in session
+    if session_id in active_sessions:
+        if 'uploaded_files' not in active_sessions[session_id]:
+            active_sessions[session_id]['uploaded_files'] = []
+
+        active_sessions[session_id]['uploaded_files'].append({
+            'filename': filename,
+            'content': content
+        })
+
+        emit('file_uploaded', {
+            'filename': filename,
+            'status': 'success',
+            'message': f'File {filename} uploaded successfully'
+        })
 
 
 if __name__ == '__main__':
