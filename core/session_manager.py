@@ -1,5 +1,5 @@
 """
-Session Manager for CodeForge AI
+Session Manager for Kroosybul AI
 Handles persistent storage of project sessions, allowing users to save and resume work.
 """
 

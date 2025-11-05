@@ -1,5 +1,5 @@
 """
-CodeForge AI - Main Flask Application
+Kroosybul AI - Main Flask Application
 An intelligent code generation studio for creating complete projects
 """
 
@@ -588,5 +588,5 @@ if __name__ == '__main__':
     host = os.getenv('HOST', '0.0.0.0')
     port = int(os.getenv('PORT', 5000))
 
-    logger.info(f"Starting CodeForge AI on {host}:{port}")
+    logger.info(f"Starting Kroosybul AI on {host}:{port}")
     socketio.run(app, host=host, port=port, debug=os.getenv('FLASK_DEBUG', 'False') == 'True')

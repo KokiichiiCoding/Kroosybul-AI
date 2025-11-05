@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# CodeForge AI - Run Script
-# This script sets up and runs the CodeForge AI application
+# Kroosybul AI - Run Script
+# This script sets up and runs the Kroosybul AI application
 
 set -e
 
-echo "🔥 CodeForge AI - Starting..."
+echo "🔥 Kroosybul AI - Starting..."
 echo ""
 
 # Check if virtual environment exists
@@ -46,7 +46,7 @@ mkdir -p logs
 
 # Run the application
 echo ""
-echo "🚀 Starting CodeForge AI..."
+echo "🚀 Starting Kroosybul AI..."
 echo "🌐 Open your browser to: http://localhost:5000"
 echo ""
 echo "Press Ctrl+C to stop the server"

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-CodeForge AI - Setup Test
+Kroosybul AI - Setup Test
 Verifies that the environment is configured correctly
 """
 
@@ -140,7 +140,7 @@ def test_static_files():
 def main():
     """Run all tests"""
     print("=" * 50)
-    print("🔥 CodeForge AI - Setup Test")
+    print("🔥 Kroosybul AI - Setup Test")
     print("=" * 50)
 
     results = []
@@ -170,7 +170,7 @@ def main():
     print("=" * 50)
 
     if passed == total:
-        print("\n🎉 All tests passed! CodeForge AI is ready to use.")
+        print("\n🎉 All tests passed! Kroosybul AI is ready to use.")
         print("🚀 Run: python app.py")
         return 0
     else:

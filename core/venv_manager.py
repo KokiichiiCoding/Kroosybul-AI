@@ -1,5 +1,5 @@
 """
-Virtual Environment Manager for CodeForge AI
+Virtual Environment Manager for Kroosybul AI
 Handles creation, management, and dependency installation in virtual environments.
 """
 

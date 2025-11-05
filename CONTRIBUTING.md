@@ -1,6 +1,6 @@
-# Contributing to CodeForge AI
+# Contributing to Kroosybul AI
 
-Thank you for your interest in contributing to CodeForge AI! This document provides guidelines for contributing to the project.
+Thank you for your interest in contributing to Kroosybul AI! This document provides guidelines for contributing to the project.
 
 ## How to Contribute
 
@@ -325,4 +325,4 @@ By contributing, you agree that your contributions will be licensed under the MI
 
 ---
 
-Thank you for contributing to CodeForge AI! 🔥
+Thank you for contributing to Kroosybul AI! 🔥

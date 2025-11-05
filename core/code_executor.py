@@ -46,7 +46,7 @@ class CodeExecutor:
         project_path = Path(project_path)
 
         # Read metadata to determine language
-        metadata_path = project_path / '.codeforge_metadata.json'
+        metadata_path = project_path / '.kroosybul_metadata.json'
         if not metadata_path.exists():
             return {
                 'success': False,

@@ -1,6 +1,6 @@
-# CodeForge AI - Usage Guide
+# Kroosybul AI - Usage Guide
 
-Welcome to CodeForge AI! This guide will help you get the most out of your AI-powered project generator.
+Welcome to Kroosybul AI! This guide will help you get the most out of your AI-powered project generator.
 
 ## Getting Started
 
@@ -56,7 +56,7 @@ Open your browser to: http://localhost:5000
 1. **Describe Your Idea**: Type a detailed description of what you want to build
    - Example: "Create a Snake game in Python with Pygame"
 
-2. **Wait for Generation**: CodeForge AI will:
+2. **Wait for Generation**: Kroosybul AI will:
    - Analyze your request
    - Plan the project structure
    - Generate all necessary files
@@ -143,7 +143,7 @@ Create a desktop note-taking app with:
 
 ## Supported Languages
 
-CodeForge AI supports multiple programming languages:
+Kroosybul AI supports multiple programming languages:
 
 - **Python** - Best for: AI/ML, web apps, scripts, data science
 - **JavaScript** - Best for: web apps, games, Node.js servers
@@ -211,7 +211,7 @@ GUI applications:
 
 ### Code Has Errors
 
-CodeForge AI tests the code, but some edge cases might occur:
+Kroosybul AI tests the code, but some edge cases might occur:
 
 1. **Review Error Messages**: Check what's failing
 2. **Install Missing Dependencies**: Sometimes OS-specific packages are needed
@@ -229,7 +229,7 @@ If you get authentication errors:
 
 ### Iterative Refinement
 
-CodeForge AI automatically:
+Kroosybul AI automatically:
 - Tests generated code
 - Identifies errors
 - Fixes issues
@@ -277,7 +277,7 @@ Mention specific libraries/frameworks you want to use:
 
 ## Environment Variables
 
-Customize CodeForge AI in `.env`:
+Customize Kroosybul AI in `.env`:
 
 ```bash
 # AI Settings
@@ -338,4 +338,4 @@ After generating your project:
 
 ---
 
-Happy coding with CodeForge AI! 🔥
+Happy coding with Kroosybul AI! 🔥

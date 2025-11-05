@@ -1,5 +1,5 @@
 """
-Template Library Manager for CodeForge AI
+Template Library Manager for Kroosybul AI
 Manages project templates including custom, community, and battle-tested templates.
 """
 

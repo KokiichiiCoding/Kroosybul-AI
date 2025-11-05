@@ -1,4 +1,4 @@
-# CodeForge AI 🔥
+# Kroosybul AI 🔥
 
 An intelligent code generation studio that transforms your ideas into complete, runnable projects across multiple programming languages.
 
@@ -56,7 +56,7 @@ python app.py
 ## Usage
 
 1. **Start a conversation**: Describe your project idea in natural language
-2. **Refine the requirements**: CodeForge AI will ask clarifying questions
+2. **Refine the requirements**: Kroosybul AI will ask clarifying questions
 3. **Watch it build**: See your project being generated in real-time
 4. **Test and iterate**: The system automatically tests and refines the code
 5. **Download**: Get your complete, runnable project
@@ -72,7 +72,7 @@ python app.py
 ## Architecture
 
 ```
-CodeForge AI
+Kroosybul AI
 ├── app.py                      # Main Flask application
 ├── core/
 │   ├── ai_engine.py           # AI integration and orchestration
@@ -122,7 +122,7 @@ SUPPORTED_LANGUAGES=python,javascript,typescript,java,cpp,rust,go
 
 ### Using Different AI Models
 
-CodeForge AI supports multiple AI providers:
+Kroosybul AI supports multiple AI providers:
 
 1. **Claude** (Anthropic) - Default, excellent for code generation
 2. **OpenAI GPT** - Alternative premium option

@@ -1,5 +1,5 @@
 """
-CodeForge AI - Core Modules
+Kroosybul AI - Core Modules
 """
 
 __version__ = '1.0.0'

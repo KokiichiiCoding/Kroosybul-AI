@@ -1,5 +1,5 @@
 """
-Multi-Model AI Engine for CodeForge AI
+Multi-Model AI Engine for Kroosybul AI
 Supports multiple AI backends: Claude, OpenAI GPT, Google Gemini, and local Ollama models.
 """
 

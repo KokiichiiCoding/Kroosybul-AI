@@ -1,8 +1,8 @@
 @echo off
-REM CodeForge AI - Run Script for Windows
-REM This script sets up and runs the CodeForge AI application
+REM Kroosybul AI - Run Script for Windows
+REM This script sets up and runs the Kroosybul AI application
 
-echo 🔥 CodeForge AI - Starting...
+echo 🔥 Kroosybul AI - Starting...
 echo.
 
 REM Check if virtual environment exists
@@ -43,7 +43,7 @@ if not exist "logs" mkdir logs
 
 REM Run the application
 echo.
-echo 🚀 Starting CodeForge AI...
+echo 🚀 Starting Kroosybul AI...
 echo 🌐 Open your browser to: http://localhost:5000
 echo.
 echo Press Ctrl+C to stop the server

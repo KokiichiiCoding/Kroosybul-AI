@@ -1,5 +1,5 @@
 /**
- * CodeForge AI - Frontend Application
+ * Kroosybul AI - Frontend Application
  * Handles WebSocket communication and UI interactions
  */
 
@@ -38,7 +38,7 @@ function initializeSocket() {
 
     socket.on('connect', () => {
         console.log('Connected to server');
-        addSystemMessage('Connected to CodeForge AI', 'success');
+        addSystemMessage('Connected to Kroosybul AI', 'success');
     });
 
     socket.on('connected', (data) => {
@@ -399,7 +399,7 @@ function showNotification(message, type = 'info') {
 }
 
 // Export for debugging
-window.CodeForgeAI = {
+window.KroosybulAI = {
     socket,
     sendMessage,
     addUserMessage,

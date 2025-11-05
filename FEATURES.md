@@ -1,6 +1,6 @@
-# CodeForge AI - Advanced Features Guide
+# Kroosybul AI - Advanced Features Guide
 
-This document describes all the advanced features available in CodeForge AI.
+This document describes all the advanced features available in Kroosybul AI.
 
 ## Table of Contents
 
@@ -557,7 +557,7 @@ Template structure:
 
 ### Dependency Management
 
-1. Let CodeForge AI create virtual environments automatically
+1. Let Kroosybul AI create virtual environments automatically
 2. Check for conflicts before deploying
 3. Use lock files (requirements.txt, package-lock.json) for reproducibility
 
@@ -627,8 +627,8 @@ ollama serve
 ## Support
 
 For issues or feature requests, please visit:
-https://github.com/YourUsername/CodeForge-AI/issues
+https://github.com/YourUsername/Kroosybul-AI/issues
 
 ---
 
-**Happy Coding with CodeForge AI!** 🚀
+**Happy Coding with Kroosybul AI!** 🚀

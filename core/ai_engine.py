@@ -37,7 +37,7 @@ class AIEngine:
         """
         logger.info("Analyzing project request...")
 
-        prompt = f"""You are CodeForge AI, an expert software architect and developer.
+        prompt = f"""You are Kroosybul AI, an expert software architect and developer.
 A user wants to create a project. Analyze their request and create a detailed project plan.
 
 User Request: {user_message}
