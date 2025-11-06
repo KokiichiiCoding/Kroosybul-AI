@@ -266,6 +266,217 @@ class ProjectTemplates:
                     'Auto-updates',
                     'Tray icon'
                 ]
+            },
+
+            # GAME DEVELOPMENT TEMPLATES
+            {
+                'id': '2d_platformer',
+                'name': '2D Platformer Game',
+                'description': 'Classic side-scrolling platformer with physics and collisions',
+                'languages': ['python', 'javascript'],
+                'category': 'game',
+                'difficulty': 'intermediate',
+                'frameworks': {
+                    'python': ['pygame', 'pymunk'],
+                    'javascript': ['phaser3', 'matter-js']
+                },
+                'features': [
+                    'Player movement and jumping',
+                    'Physics simulation',
+                    'Collision detection',
+                    'Enemy AI',
+                    'Level system',
+                    'Score tracking',
+                    'Sound effects'
+                ]
+            },
+            {
+                'id': '2d_rpg',
+                'name': 'Top-Down RPG',
+                'description': 'Classic RPG with exploration, combat, and dialogue',
+                'languages': ['python', 'javascript'],
+                'category': 'game',
+                'difficulty': 'advanced',
+                'frameworks': {
+                    'python': ['pygame', 'pytmx'],
+                    'javascript': ['phaser3', 'tiled']
+                },
+                'features': [
+                    'Top-down movement',
+                    'Tile-based maps',
+                    'NPC dialogue system',
+                    'Turn-based combat',
+                    'Inventory system',
+                    'Quest tracking',
+                    'Save/Load system'
+                ]
+            },
+            {
+                'id': 'visual_novel',
+                'name': 'Visual Novel',
+                'description': 'Interactive story game with branching dialogue',
+                'languages': ['python'],
+                'category': 'game',
+                'difficulty': 'beginner',
+                'frameworks': {
+                    'python': ['renpy', 'pygame']
+                },
+                'features': [
+                    'Dialogue system',
+                    'Character sprites',
+                    'Background scenes',
+                    'Choice system',
+                    'Save/Load',
+                    'Skip and auto-play',
+                    'Music and sound effects'
+                ]
+            },
+            {
+                'id': '3d_sandbox',
+                'name': '3D Sandbox Game',
+                'description': 'First-person 3D world exploration and building',
+                'languages': ['python', 'javascript'],
+                'category': 'game',
+                'difficulty': 'advanced',
+                'frameworks': {
+                    'python': ['panda3d', 'ursina'],
+                    'javascript': ['threejs', 'cannon-es']
+                },
+                'features': [
+                    'First-person camera',
+                    '3D voxel terrain',
+                    'Block placement/destruction',
+                    'Physics simulation',
+                    'Procedural generation',
+                    'Day/night cycle',
+                    'Inventory system'
+                ]
+            },
+            {
+                'id': 'puzzle_game',
+                'name': 'Puzzle Game',
+                'description': 'Brain-teasing puzzle mechanics with levels',
+                'languages': ['python', 'javascript'],
+                'category': 'game',
+                'difficulty': 'intermediate',
+                'frameworks': {
+                    'python': ['pygame'],
+                    'javascript': ['pixijs', 'phaser3']
+                },
+                'features': [
+                    'Grid-based gameplay',
+                    'Level progression',
+                    'Undo/Redo system',
+                    'Move counter',
+                    'Time challenge',
+                    'Level editor',
+                    'Achievement system'
+                ]
+            },
+            {
+                'id': 'arcade_shooter',
+                'name': 'Arcade Shooter',
+                'description': 'Fast-paced shooting game with waves of enemies',
+                'languages': ['python', 'javascript'],
+                'category': 'game',
+                'difficulty': 'intermediate',
+                'frameworks': {
+                    'python': ['pygame'],
+                    'javascript': ['phaser3', 'pixijs']
+                },
+                'features': [
+                    'Player spaceship/character',
+                    'Projectile system',
+                    'Enemy waves',
+                    'Power-ups',
+                    'Particle effects',
+                    'High score system',
+                    'Progressive difficulty'
+                ]
+            },
+            {
+                'id': 'endless_runner',
+                'name': 'Endless Runner',
+                'description': 'Procedurally generated endless running game',
+                'languages': ['python', 'javascript'],
+                'category': 'game',
+                'difficulty': 'intermediate',
+                'frameworks': {
+                    'python': ['pygame'],
+                    'javascript': ['phaser3']
+                },
+                'features': [
+                    'Auto-scrolling',
+                    'Procedural generation',
+                    'Obstacle avoidance',
+                    'Power-ups',
+                    'Distance tracking',
+                    'Speed progression',
+                    'Leaderboard'
+                ]
+            },
+            {
+                'id': 'card_game',
+                'name': 'Card Game',
+                'description': 'Turn-based card battle game',
+                'languages': ['python', 'javascript'],
+                'category': 'game',
+                'difficulty': 'intermediate',
+                'frameworks': {
+                    'python': ['pygame'],
+                    'javascript': ['phaser3', 'pixijs']
+                },
+                'features': [
+                    'Deck building',
+                    'Card drawing system',
+                    'Turn-based combat',
+                    'Mana/Resource system',
+                    'AI opponent',
+                    'Card effects',
+                    'Collection system'
+                ]
+            },
+            {
+                'id': 'tower_defense',
+                'name': 'Tower Defense',
+                'description': 'Strategic tower placement defense game',
+                'languages': ['python', 'javascript'],
+                'category': 'game',
+                'difficulty': 'advanced',
+                'frameworks': {
+                    'python': ['pygame'],
+                    'javascript': ['phaser3']
+                },
+                'features': [
+                    'Tower placement',
+                    'Enemy pathfinding',
+                    'Wave system',
+                    'Upgrade system',
+                    'Multiple tower types',
+                    'Resource management',
+                    'Map editor'
+                ]
+            },
+            {
+                'id': 'racing_game',
+                'name': 'Racing Game',
+                'description': '2D or 3D racing with multiple tracks',
+                'languages': ['python', 'javascript'],
+                'category': 'game',
+                'difficulty': 'advanced',
+                'frameworks': {
+                    'python': ['pygame', 'pymunk'],
+                    'javascript': ['threejs', 'phaser3']
+                },
+                'features': [
+                    'Vehicle physics',
+                    'Track system',
+                    'Lap timing',
+                    'Opponent AI',
+                    'Boost/power-ups',
+                    'Multiple vehicles',
+                    'Time trial mode'
+                ]
             }
         ]
 
