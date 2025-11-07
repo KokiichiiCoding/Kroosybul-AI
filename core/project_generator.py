@@ -12,6 +12,7 @@ from datetime import datetime
 import zipfile
 
 from .ai_engine import AIEngine
+from .project_templates import ProjectTemplates
 
 logger = logging.getLogger(__name__)
 
@@ -443,41 +444,12 @@ MIT License - Feel free to use this project however you'd like.
 
     def get_available_templates(self) -> List[Dict[str, str]]:
         """Get list of available project templates"""
-        return [
-            {
-                'id': 'web_app',
-                'name': 'Web Application',
-                'description': 'Full-stack web application with frontend and backend',
-                'languages': ['python', 'javascript', 'typescript']
-            },
-            {
-                'id': 'game',
-                'name': 'Game Project',
-                'description': '2D or 3D game with game loop and rendering',
-                'languages': ['python', 'javascript', 'cpp', 'rust']
-            },
-            {
-                'id': 'api',
-                'name': 'REST API',
-                'description': 'RESTful API service with endpoints and database',
-                'languages': ['python', 'javascript', 'typescript', 'go', 'rust']
-            },
-            {
-                'id': 'cli_tool',
-                'name': 'CLI Tool',
-                'description': 'Command-line application',
-                'languages': ['python', 'rust', 'go']
-            },
-            {
-                'id': 'ml_project',
-                'name': 'Machine Learning',
-                'description': 'ML/AI project with data processing and model training',
-                'languages': ['python']
-            },
-            {
-                'id': 'desktop_app',
-                'name': 'Desktop Application',
-                'description': 'GUI desktop application',
-                'languages': ['python', 'javascript', 'cpp']
-            }
-        ]
+        return ProjectTemplates.get_all_templates()
+
+    def get_template_by_id(self, template_id: str) -> Dict[str, Any]:
+        """Get a specific template by ID"""
+        return ProjectTemplates.get_template_by_id(template_id)
+
+    def get_templates_by_category(self, category: str) -> List[Dict[str, Any]]:
+        """Get templates by category"""
+        return ProjectTemplates.get_templates_by_category(category)
